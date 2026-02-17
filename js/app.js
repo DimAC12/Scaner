@@ -337,7 +337,7 @@ function showNotification() {
             if (permission === 'granted') {
                 new Notification('Привет из PWA!', {
                     body: 'Это уведомление из вашего PWA приложения',
-                    icon: './icon.png'
+                    icon: './images/icon.png'
                 });
             }
         });
