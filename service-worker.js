@@ -1,11 +1,11 @@
 // Версия кэша для управления обновлениями
-const CACHE_NAME = 'pwa-cache-v1';
+const CACHE_NAME = 'scaner-cache-v1';
 const urlsToCache = [
     './',
     './index.html',
     './css/style.css',
     './manifest.json',
-    './omages/icon.png',
+    './images/icon.png',
     './js/app.js',
     './js/html5-qrcode.min.js'
 ];
