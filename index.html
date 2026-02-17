@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="html5-qrcode.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Блок входа -->
+        <div id="login-block">
+            <h2>Вход в систему</h2>
+            <div id="buttonContainer"></div>
+        </div>
+
+        <!-- Блок профиля -->
+        <div id="user-profile">
+            <img id="user-img" class="avatar" src="" alt="Avatar">
+            <h3 id="user-name"></h3>
+            <p id="user-email" style="color: #666;"></p>
+            <button class="logout-btn" onclick="handleLogout()">Выйти</button>
+        </div>
+
+        <div id="scaner-container">
+            <header>
+                <h1>📷 Сканер кодов</h1>
+                <p>QR-коды и штрихкоды</p>
+            </header>
+
+            <!-- Статус -->
+            <div id="status" class="status inactive">
+                Камера выключена
+            </div>
+
+            <!-- Переключатель камер -->
+            <div class="camera-switch" id="cameraSwitch" style="display: none;">
+                <button class="camera-btn active" data-camera="environment">📸 Задняя</button>
+                <button class="camera-btn" data-camera="user">🤳 Фронтальная</button>
+            </div>
+
+            <!-- Область сканера -->
+            <div id="reader"></div>
+
+            <!-- Результат -->
+            <div id="resultBox" class="result-box">
+                <div class="result-label">Результат сканирования</div>
+                <div id="resultValue" class="result-value"></div>
+                <div id="resultType" class="result-type"></div>
+                <button class="btn btn-copy" onclick="copyResult()">
+                    📋 Копировать
+                </button>
+                <button class="btn btn-secondary" onclick="scanAgain()" style="margin-top: 10px;">
+                    🔄 Сканировать снова
+                </button>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary" onclick="startScanner()">
+                    ▶️ Начать сканирование
+                </button>
+                <button id="stopBtn" class="btn btn-secondary" onclick="stopScanner()" style="display: none;">
+                    ⏹️ Остановить
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
